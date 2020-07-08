@@ -1,0 +1,8 @@
+.order-book-viewport {
+    height: 200px;
+    width: 200px;
+}
+
+.order-book-item {
+    height: 15px;
+}
