@@ -1,16 +1,13 @@
 <!-- Toolbar -->
 <div>
-  <button (click)='subscribe()'>Start</button>
-  <button (click)='unsubscribe()'>Stop</button>
-  <div>Sell</div>
-  <cdk-virtual-scroll-viewport itemSize="15" minBufferPx="1200" maxBufferPx="1200" class="order-book-viewport">    
-    <div *cdkVirtualFor ="let sellLevel of displaySellData" class="order-book-item"> {{sellLevel[0]}} - {{sellLevel[1]}} </div>
   
+  <cdk-virtual-scroll-viewport itemSize="15" minBufferPx="1200" maxBufferPx="1200" class="order-book-viewport">
+    <div>Sell</div>
+    <div *cdkVirtualFor ="let sellLevel of displaySellData" class="order-book-item order-book-sell-item"> {{sellLevel[0]}} - {{sellLevel[1]}} </div>  
+    <div>Price intersection: {{intersection}}</div>
+    <div>Buy</div>
+    <div *ngFor ="let buyLevel of displayBuyData" class="order-book-item order-book-buy-item"> {{buyLevel[0]}} - {{buyLevel[1]}} </div>
   </cdk-virtual-scroll-viewport>
-  <div>Price intersection: {{intersection}}</div>
-  <div>Buy</div>
-  <cdk-virtual-scroll-viewport itemSize="15" minBufferPx="1200" maxBufferPx="1200" class="order-book-viewport">    
-    <div *ngFor ="let buyLevel of displayBuyData" class="order-book-item"> {{buyLevel[0]}} - {{buyLevel[1]}} </div>
-  </cdk-virtual-scroll-viewport>
+  
 </div>
 
